@@ -1,0 +1,9 @@
+﻿.carousel-inner img {
+    width:100%;
+    height:400px !important;
+}
+footer {
+    background:gray;
+    color:#fff;
+    padding:15px;
+}

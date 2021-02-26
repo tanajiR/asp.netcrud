@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Signup";
+}
+
+<div class="row">
+    <div class="col-sm-6">
+        <h4 class="text-center">Registration Form</h4>
+        <form action="/account/signup" method="post">
+            <hr />
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <label>Full Name</label><label class="pull-right">:</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="text" name="full_name" class="form-control" placeholder="Enter Full Name" required />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <label>Mobile Number</label><label class="pull-right">:</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="number" name="mno" class="form-control" placeholder="Enter Mobile Number" required />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <label>Email Id</label><label class="pull-right">:</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="email" name="email" class="form-control" placeholder="Enter Email Id" required />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <label>Password</label><label class="pull-right">:</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="password" name="password" class="form-control" placeholder="Enter Password" required />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <label>Address</label><label class="pull-right">:</label>
+                </div>
+                <div class="col-sm-8">
+                    <textarea name="addr" class="form-control" placeholder="Enter Address" required></textarea>
+                </div>
+            </div>
+            <input type="hidden" value="@College_Demo.Models.Role.Student" name="role" />
+            <hr />
+            <div class="form-group row">
+                <div class="col-sm-2">
+                    <input type="submit" value="Signup" class="btn btn-primary btn-block" />
+                </div>
+                <div class="col-sm-2">
+                    <input type="reset" value="reset" class="btn btn-primary btn-block" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@{ Html.RenderPartial("_PartialDemo");}

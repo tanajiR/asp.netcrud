@@ -1,0 +1,43 @@
+﻿@model IEnumerable<College_Demo.Models.User>
+@{
+    ViewBag.Title = "managestudents";
+}
+
+<h5>Students List <label class="label-success label">@TempData["msg"]</label></h5>
+<hr />
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Sr.No.</th>
+                <th>Full Name</th>
+                <th>Mobile Number</th>
+                <th>Email Address</th>
+                <th>Password</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ int counter = 1;}
+            @foreach (var student in Model)
+            {
+            <tr>
+                <td>@counter</td>
+                <td>@student.full_name</td>
+                <td>@student.mno</td>
+                <td>@student.email</td>
+                <td>@student.password</td>
+                <td>@student.addr</td>
+                <td>
+                    <a href="@Url.Action("edituser","user",new { id=student.id })" class="btn btn-primary btn-xs">Edit</a>
+                    <a onclick="return confirm('Are you sure?')" href="@Url.Action("deleteuser","user",new { id=student.id })" class="btn btn-danger btn-xs">Delete</a>
+                </td>
+            </tr>
+                counter++;
+            }
+        </tbody>
+    </table>
+    <a href="javascript:void(0)" onclick="ShowMoreRecords(this)">Show Next 5 Records</a>
+</div>
+
